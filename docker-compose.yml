@@ -1,12 +1,12 @@
 services:
   certbot:
-    image: certbot/certbot
+    build: .
     container_name: certbot
     env_file: ${DPSRV_HOME}/rc/secrets/certbot/certbot.env
     volumes:
-      - ${DPSRV_HOME}/var/www/:/usr/share/nginx/html/
-      - ${DPSRV_HOME}/rc/secrets/letsencrypt:/etc/letsencrypt
-      - ${DPSRV_HOME}/var/lib/letsencrypt:/var/lib/letsencrypt
+      - ${DPSRV_HOME}/var/www/:/var/www/
+      - ${DPSRV_HOME}/rc/secrets/bind:/etc/bind/
+      - ${DPSRV_HOME}/rc/secrets/letsencrypt/:/etc/letsencrypt/
+      - ${DPSRV_HOME}/var/lib/letsencrypt/:/var/lib/letsencrypt/
       - /etc/localtime:/etc/localtime:ro
-    command: [ "certonly" ]
     restart: no
