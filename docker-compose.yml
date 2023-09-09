@@ -7,6 +7,5 @@ services:
       - ${DPSRV_HOME}/var/www/:/var/www/
       - ${DPSRV_HOME}/rc/secrets/bind:/etc/bind/
       - ${DPSRV_HOME}/rc/secrets/letsencrypt/:/etc/letsencrypt/
-      - ${DPSRV_HOME}/var/lib/letsencrypt/:/var/lib/letsencrypt/
       - /etc/localtime:/etc/localtime:ro
     restart: no
