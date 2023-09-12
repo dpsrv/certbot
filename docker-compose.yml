@@ -1,6 +1,7 @@
 services:
   certbot:
     build: .
+    image: dpsrv/certbot
     container_name: certbot
     env_file: ${DPSRV_HOME}/rc/secrets/certbot/certbot.env
     volumes:
@@ -8,4 +9,4 @@ services:
       - ${DPSRV_HOME}/rc/secrets/bind:/etc/bind/
       - ${DPSRV_HOME}/rc/secrets/letsencrypt/:/etc/letsencrypt/
       - /etc/localtime:/etc/localtime:ro
-    restart: no
+    restart: "no"
