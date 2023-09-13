@@ -5,7 +5,7 @@ services:
     container_name: certbot
     env_file: ${DPSRV_HOME}/rc/secrets/certbot/certbot.env
     volumes:
-      - ${DPSRV_HOME}/var/www/:/var/www/
+      - ${DPSRV_HOME}/srv/www/:/var/www/
       - ${DPSRV_HOME}/rc/secrets/bind:/etc/bind/
       - ${DPSRV_HOME}/rc/secrets/letsencrypt/:/etc/letsencrypt/
       - /etc/localtime:/etc/localtime:ro
