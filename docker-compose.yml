@@ -10,3 +10,7 @@ services:
       - ${DPSRV_HOME}/rc/secrets/letsencrypt/:/etc/letsencrypt/
       - /etc/localtime:/etc/localtime:ro
     restart: "no"
+networks:
+  default:
+    name: dpsrv
+    external: true
