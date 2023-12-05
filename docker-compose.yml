@@ -1,5 +1,5 @@
 services:
-  certbot:
+  certbot-web:
     build: .
     image: dpsrv/certbot-web
     container_name: certbot-web
