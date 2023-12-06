@@ -2,7 +2,7 @@ services:
   certbot-web:
     build: .
     image: dpsrv/certbot-web
-    container_name: certbot-web
+    container_name: dpsrv-certbot-web
     env_file: ${DPSRV_HOME}/rc/secrets/certbot/certbot.env
     volumes:
       - ${DPSRV_HOME}/srv/www/:/var/www/
