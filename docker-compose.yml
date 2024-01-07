@@ -5,7 +5,7 @@ services:
     container_name: dpsrv-certbot-web
     env_file:
       - ${DPSRV_HOME}/rc/secrets/certbot/certbot.env
-      - ${DPSRV_HOME}/local.env
+      - ${DPSRV_HOME}/rc/secrets/local/${HOSTNAME}/local.env
     volumes:
       - ${DPSRV_HOME}/srv/www/:/var/www/
       - ${DPSRV_HOME}/rc/secrets/bind:/etc/bind/
