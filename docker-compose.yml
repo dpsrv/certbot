@@ -1,8 +1,8 @@
 services:
   dpsrv-certbot-web:
+    container_name: dpsrv-certbot-web-${tag:-latest}
+    image: dpsrv/certbot-web:${tag:-latest}
     build: .
-    image: dpsrv/certbot-web
-    container_name: dpsrv-certbot-web
     env_file:
       - ${DPSRV_HOME}/rc/secrets/certbot/certbot.env
       - ${DPSRV_HOME}/rc/secrets/local/${HOSTNAME}/local.env
